@@ -17,9 +17,26 @@ class _MyImcAppState extends State<MyImcApp> {
     double altura = double.parse(alturacontroller.text) / 100;
     double imc = peso / (altura * altura);
     setState(() {
-      resultado = 'Seu IMC é ${imc.toStringAsPrecision(4)}';
+      if (imc < 18.5) {
+        resultado =
+            'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta abaixo do peso!';
+      } else if (imc >= 18.5 && imc < 24.9) {
+        resultado =
+            'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta com peso Normal!';
+      } else if (imc > 24.9 && imc <= 29.9) {
+        resultado =
+            'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta acima do peso!';
+      } else if (imc > 29.9 && imc <= 34.9) {
+        resultado =
+            'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta com Obesidade Grau I!!!';
+      } else if (imc > 34.9 && imc <= 39.9) {
+        resultado =
+            'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta com Obesidade Grau II!!!';
+      } else if (imc > 39.9) {
+        resultado =
+            'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta com Obesidade Morbida!!! Procure um especialista!!!';
+      }
     });
-    print(resultado);
   }
 
   @override
