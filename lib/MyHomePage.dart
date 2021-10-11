@@ -7,10 +7,18 @@ class MyImcApp extends StatefulWidget {
 }
 
 class _MyImcAppState extends State<MyImcApp> {
-  String resultado = 'Resultado';
+  String resultado = '';
 
   TextEditingController pesocontroller = TextEditingController();
   TextEditingController alturacontroller = TextEditingController();
+
+  void _refresh() {
+    setState(() {
+      pesocontroller.text = '';
+      alturacontroller.text = '';
+      resultado = '';
+    });
+  }
 
   void _calcular() {
     double peso = double.parse(pesocontroller.text);
@@ -89,13 +97,18 @@ class _MyImcAppState extends State<MyImcApp> {
                     onPressed: () => _calcular(), child: Text('Calcular')),
                 Text(
                   resultado,
-                  style: TextStyle(color: Colors.blueGrey, fontSize: 20),
+                  style: TextStyle(color: Colors.blueGrey, fontSize: 15),
                 )
               ],
             ),
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _refresh();
+          },
+          child: Icon(Icons.refresh)),
     );
   }
 }
