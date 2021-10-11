@@ -43,6 +43,8 @@ class _MyImcAppState extends State<MyImcApp> {
       } else if (imc > 39.9) {
         resultado =
             'Seu IMC é de ${imc.toStringAsFixed(2)} e você esta com Obesidade Morbida!!! Procure um especialista!!!';
+      } else if (pesocontroller == "" || alturacontroller == "") {
+        resultado = 'Por favor preencha todos os campos';
       }
     });
   }
@@ -61,11 +63,15 @@ class _MyImcAppState extends State<MyImcApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text(
+                  'by Brandon',
+                  style: TextStyle(fontSize: 10),
+                ),
                 SizedBox(
                   height: 60,
                 ),
                 Icon(
-                  Icons.calculate,
+                  Icons.calculate_outlined,
                   color: Colors.blueGrey,
                   size: 50,
                 ),
