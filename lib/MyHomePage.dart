@@ -55,6 +55,9 @@ class _MyImcAppState extends State<MyImcApp> {
       appBar: AppBar(
         title: Text('Calculadora IMC'),
         centerTitle: true,
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.list_alt_sharp))
+        ],
       ),
       body: SingleChildScrollView(
         child: Center(
