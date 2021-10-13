@@ -1,4 +1,5 @@
 // ignore: file_names
+import 'package:calculadora_imc/TablePage.dart';
 import 'package:flutter/material.dart';
 
 class MyImcApp extends StatefulWidget {
@@ -56,7 +57,11 @@ class _MyImcAppState extends State<MyImcApp> {
         title: Text('Calculadora IMC'),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.list_alt_sharp))
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/table');
+              },
+              icon: Icon(Icons.table_view)),
         ],
       ),
       body: SingleChildScrollView(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MyHomePage.dart';
+import 'TablePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: MyImcApp(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyImcApp(),
+        '/table': (context) => TablePage(),
+      },
     );
   }
 }
