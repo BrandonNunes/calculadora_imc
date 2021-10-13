@@ -4,7 +4,10 @@ class TablePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Classificação de Risco:'),
+        centerTitle: true,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +42,7 @@ class TablePage extends StatelessWidget {
               child: Container(
                 height: 40,
                 width: 240,
-                color: Colors.green,
+                color: Colors.greenAccent,
                 child: Center(
                     child: Text("Peso normal	18,5 a 24,9 kg",
                         style: TextStyle(color: Colors.white))),
